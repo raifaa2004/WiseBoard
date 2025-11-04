@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>স্বাস্থ্যরক্ষী - আপনার সম্পূর্ণ স্বাস্থ্য সহায়িকা</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>স্বাস্থ্যসুরক্ষা - আপনার সম্পূর্ণ স্বাস্থ্য সহায়িকা</title>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary-color: #4a6cf7;
@@ -48,22 +48,28 @@
             padding: 0 2rem;
         }
 
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
         .logo-container {
             display: flex;
             align-items: center;
-            justify-content: center;
-            flex-direction: column;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            margin-bottom: 1rem;
         }
 
-        .logo i {
-            font-size: 3rem;
-            color: var(--primary-color);
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
             margin-right: 1rem;
         }
 
@@ -73,11 +79,36 @@
             font-weight: 700;
         }
 
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            background-color: var(--light-color);
+            border-radius: 30px;
+            padding: 0.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .lang-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .lang-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
         .tagline {
             font-size: 1.1rem;
             color: var(--text-color);
             text-align: center;
             max-width: 600px;
+            margin: 0 auto;
         }
 
         /* Navigation */
@@ -203,17 +234,19 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
 
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            text-align: center;
+        .feature-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
         }
 
         .feature-card h3 {
             font-size: 1.3rem;
             color: var(--dark-color);
             margin-bottom: 1rem;
+            text-align: center;
         }
 
         .feature-card p {
@@ -289,14 +322,6 @@
 
         .btn:hover {
             background-color: var(--secondary-color);
-        }
-
-        .btn-secondary {
-            background-color: var(--secondary-color);
-        }
-
-        .btn-secondary:hover {
-            background-color: #27ae60;
         }
 
         /* Health Conditions Section */
@@ -380,6 +405,224 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Why We Care Section */
+        .why-care {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .care-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .care-card {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .care-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+        }
+
+        .care-card h3 {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Health Tips Section */
+        .health-tips {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .tip-card {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .tip-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .tip-card h3 {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Symptom Awareness Section */
+        .symptom-awareness {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .symptom-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .category-btn {
+            background-color: var(--light-color);
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .category-btn:hover, .category-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .symptom-list {
+            display: none;
+            margin-bottom: 2rem;
+        }
+
+        .symptom-list.active {
+            display: block;
+        }
+
+        .symptom-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .symptom-item input {
+            margin-right: 0.75rem;
+        }
+
+        .result-container {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: none;
+        }
+
+        .result-container.active {
+            display: block;
+        }
+
+        .result-container h4 {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Quiz Section */
+        .quiz-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quiz-progress {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .progress-step {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            color: white;
+        }
+
+        .progress-step.active {
+            background-color: var(--primary-color);
+        }
+
+        .progress-step.completed {
+            background-color: var(--secondary-color);
+        }
+
+        .question-container {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .question-container h3 {
+            font-size: 1.3rem;
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .answer-options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .answer-option {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .answer-option:hover {
+            border-color: var(--primary-color);
+            background-color: rgba(74, 108, 247, 0.05);
+        }
+
+        .answer-option.selected {
+            border-color: var(--primary-color);
+            background-color: rgba(74, 108, 247, 0.1);
+        }
+
+        .quiz-navigation {
+            display: flex;
+            justify-content: space-between;
+        }
+
         /* Review Section */
         .review-section {
             background-color: white;
@@ -421,69 +664,138 @@
             font-family: 'Hind Siliguri', sans-serif;
         }
 
-        /* Progress Tracker */
-        .progress-tracker {
+        /* App Rating Section */
+        .app-rating {
             background-color: white;
             border-radius: 8px;
             padding: 2rem;
             box-shadow: var(--shadow);
         }
 
-        .progress-steps {
+        .rating-overview {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
+            align-items: center;
             margin-bottom: 2rem;
             flex-wrap: wrap;
         }
 
-        .progress-step {
+        .overall-rating {
+            text-align: center;
+        }
+
+        .rating-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .rating-stars {
+            font-size: 1.5rem;
+            color: #ffc107;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating-bars {
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .rating-bar {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            position: relative;
-            width: 20%;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating-label {
+            width: 80px;
+            text-align: right;
+            margin-right: 1rem;
+        }
+
+        .bar-container {
+            flex: 1;
+            height: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .bar {
+            height: 100%;
+            background-color: #ffc107;
+        }
+
+        .rating-percentage {
+            width: 50px;
+            text-align: left;
+            margin-left: 1rem;
+        }
+
+        .user-reviews {
+            margin-top: 2rem;
+        }
+
+        .review-card {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            padding: 1.5rem;
             margin-bottom: 1rem;
         }
 
-        .step-circle {
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .reviewer-avatar {
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background-color: #ddd;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 0.5rem;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+
+        .reviewer-name {
             font-weight: 600;
-            color: white;
         }
 
-        .progress-step.active .step-circle {
-            background-color: var(--primary-color);
-        }
-
-        .progress-step.completed .step-circle {
-            background-color: var(--secondary-color);
-        }
-
-        .step-label {
-            text-align: center;
+        .review-date {
+            color: #6c757d;
             font-size: 0.9rem;
         }
 
-        .progress-bar {
-            height: 4px;
-            background-color: #ddd;
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            width: 100%;
-            z-index: -1;
+        .review-rating {
+            color: #ffc107;
+            margin-bottom: 0.5rem;
         }
 
-        .progress-step:not(:last-child) .progress-bar {
-            background-color: var(--secondary-color);
+        /* Aside Section */
+        .aside-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .aside-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .aside-img {
             width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
         }
 
         /* Modal */
@@ -584,18 +896,13 @@
                 grid-template-columns: 1fr;
             }
 
-            .progress-steps {
+            .rating-overview {
                 flex-direction: column;
-                align-items: center;
             }
 
-            .progress-step {
+            .rating-bars {
+                margin-top: 2rem;
                 width: 100%;
-                margin-bottom: 2rem;
-            }
-
-            .progress-bar {
-                display: none;
             }
         }
     </style>
@@ -604,21 +911,32 @@
     <!-- Header with Logo -->
     <header>
         <div class="container">
-            <div class="logo-container">
-                <div class="logo">
-                    <i class="fas fa-heartbeat"></i>
-                    <h1>স্বাস্থ্যরক্ষী</h1>
+            <div class="header-top">
+                <div class="logo-container">
+                    <div class="logo">
+                        <img src="https://picsum.photos/seed/healthlogo/60/60.jpg" alt="স্বাস্থ্যসুরক্ষা লোগো" class="logo-img">
+                        <h1 data-bn="app-title">স্বাস্থ্যসুরক্ষা</h1>
+                    </div>
                 </div>
-                <p class="tagline">মানসিক স্বাস্থ্য, পূর্ণ শরীর পরীক্ষা, গর্ভাবস্থায় মায়েদের নিরাপত্তা এবং শিশু যত্নের সম্পূর্ণ সমাধান</p>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="bn">বাংলা</button>
+                    <button class="lang-btn" data-lang="en">English</button>
+                </div>
             </div>
+            <p class="tagline" data-bn="tagline">মায়েদের স্বাস্থ্যসেবা এবং গোপনীয়তা রক্ষায় আপনার সহায়িকা</p>
             <nav>
                 <ul>
-                    <li><a href="#home" class="active">হোম</a></li>
-                    <li><a href="#privacy">গোপনীয়তা নীতি</a></li>
-                    <li><a href="#features">বৈশিষ্ট্য</a></li>
-                    <li><a href="#register">নিবন্ধন</a></li>
-                    <li><a href="#health">স্বাস্থ্য পরীক্ষা</a></li>
-                    <li><a href="#review">পর্যালোচনা</a></li>
+                    <li><a href="#home" class="active" data-bn="nav-home">হোম</a></li>
+                    <li><a href="#privacy" data-bn="nav-privacy">গোপনীয়তা নীতি</a></li>
+                    <li><a href="#features" data-bn="nav-features">বৈশিষ্ট্য</a></li>
+                    <li><a href="#register" data-bn="nav-register">নিবন্ধন</a></li>
+                    <li><a href="#health" data-bn="nav-health">স্বাস্থ্য পরীক্ষা</a></li>
+                    <li><a href="#why-care" data-bn="nav-why-care">যত্নের কারণ</a></li>
+                    <li><a href="#health-tips" data-bn="nav-tips">স্বাস্থ্য টিপস</a></li>
+                    <li><a href="#symptom-awareness" data-bn="nav-symptoms">উপসর্গ সচেতনতা</a></li>
+                    <li><a href="#quiz" data-bn="nav-quiz">কুইজ</a></li>
+                    <li><a href="#review" data-bn="nav-review">পর্যালোচনা</a></li>
+                    <li><a href="#rating" data-bn="nav-rating">রেটিং</a></li>
                 </ul>
             </nav>
         </div>
@@ -628,228 +946,207 @@
         <div class="container">
             <!-- Privacy Policy Section -->
             <section id="privacy">
-                <h2>গোপনীয়তা নীতি</h2>
+                <h2 data-bn="privacy-title">গোপনীয়তা নীতি</h2>
                 <div class="privacy-policy">
                     <div class="policy-content">
-                        <p>স্বাস্থ্যরক্ষীতে, আমরা আপনার গোপনীয়তা রক্ষা এবং আপনার ব্যক্তিগত স্বাস্থ্য তথ্যের নিরাপত্তা নিশ্চিত করতে প্রতিশ্রুতিবদ্ধ। এই গোপনীয়তা নীতিতে বর্ণনা করা হয়েছে যে আমরা আমাদের পরিষেবাগুলি ব্যবহার করার সময় আপনার তথ্য কীভাবে সংগ্রহ, ব্যবহার এবং সুরক্ষিত করি।</p>
+                        <p data-bn="privacy-intro">স্বাস্থ্যসুরক্ষায়, আমরা আপনার গোপনীয়তা রক্ষা এবং আপনার ব্যক্তিগত স্বাস্থ্য তথ্যের নিরাপত্তা নিশ্চিত করতে প্রতিশ্রুতিবদ্ধ। এই গোপনীয়তা নীতিতে বর্ণনা করা হয়েছে যে আমরা আমাদের পরিষেবাগুলি ব্যবহার করার সময় আপনার তথ্য কীভাবে সংগ্রহ, ব্যবহার এবং সুরক্ষিত করি।</p>
                         
-                        <h3>আমরা কী তথ্য সংগ্রহ করি</h3>
-                        <p>আমরা নিম্নলিখিত ধরনের তথ্য সংগ্রহ করতে পারি:</p>
+                        <h3 data-bn="privacy-data-title">আমরা কী তথ্য সংগ্রহ করি</h3>
+                        <p data-bn="privacy-data-desc">আমরা নিম্নলিখিত ধরনের তথ্য সংগ্রহ করতে পারি:</p>
                         <ul>
-                            <li>ব্যক্তিগত সনাক্তকরণ তথ্য (নাম, বয়স, অবস্থান, ইমেল)</li>
-                            <li>স্বাস্থ্য তথ্য (উপসর্গ, অবস্থা, চিকিৎসা ইতিহাস)</li>
-                            <li>ডিভাইস এবং ব্যবহারের তথ্য (আইপি ঠিকানা, ব্রাউজারের ধরন, অপারেটিং সিস্টেম)</li>
-                            <li>আপনি যখন আমাদের পরিষেবাগুলি ব্যবহার করেন তখন আপনি যে তথ্য প্রদান করেন</li>
-                            <li>কুকিজ এবং অনুরূপ ট্র্যাকিং প্রযুক্তি</li>
+                            <li data-bn="privacy-data-item1">ব্যক্তিগত সনাক্তকরণ তথ্য (নাম, বয়স, অবস্থান, ইমেল)</li>
+                            <li data-bn="privacy-data-item2">স্বাস্থ্য তথ্য (উপসর্গ, অবস্থা, চিকিৎসা ইতিহাস)</li>
+                            <li data-bn="privacy-data-item3">ডিভাইস এবং ব্যবহারের তথ্য (আইপি ঠিকানা, ব্রাউজারের ধরন, অপারেটিং সিস্টেম)</li>
+                            <li data-bn="privacy-data-item4">আপনি যখন আমাদের পরিষেবাগুলি ব্যবহার করেন তখন আপনি যে তথ্য প্রদান করেন</li>
+                            <li data-bn="privacy-data-item5">কুকিজ এবং অনুরূপ ট্র্যাকিং প্রযুক্তি</li>
                         </ul>
                         
-                        <h3>আমরা কীভাবে আপনার তথ্য ব্যবহার করি</h3>
-                        <p>আমরা সংগৃহীত তথ্য বিভিন্ন উদ্দেশ্যে ব্যবহার করি:</p>
+                        <h3 data-bn="privacy-usage-title">আমরা কীভাবে আপনার তথ্য ব্যবহার করি</h3>
+                        <p data-bn="privacy-usage-desc">আমরা সংগৃহীত তথ্য বিভিন্ন উদ্দেশ্যে ব্যবহার করি:</p>
                         <ul>
-                            <li>ব্যক্তিগতকৃত স্বাস্থ্য মূল্যায়ন এবং সুপারিশ প্রদান করতে</li>
-                            <li>আপনার স্বাস্থ্যের অগ্রগতি পর্যবেক্ষণ এবং নির্দেশনা প্রদান করতে</li>
-                            <li>গুরুত্বপূর্ণ স্বাস্থ্য আপডেট সম্পর্কে আপনাকে অবহিত করতে</li>
-                            <li>গ্রাহক সহায়তা প্রদান করতে</li>
-                            <li>আমাদের পরিষেবাগুলি উন্নত করতে বিশ্লেষণ সংগ্রহ করতে</li>
-                            <li>প্রযুক্তিগত সমস্যা সনাক্ত, প্রতিরোধ এবং সমাধান করতে</li>
+                            <li data-bn="privacy-usage-item1">ব্যক্তিগতকৃত স্বাস্থ্য মূল্যায়ন এবং সুপারিশ প্রদান করতে</li>
+                            <li data-bn="privacy-usage-item2">আপনার স্বাস্থ্যের অগ্রগতি পর্যবেক্ষণ এবং নির্দেশনা প্রদান করতে</li>
+                            <li data-bn="privacy-usage-item3">গুরুত্বপূর্ণ স্বাস্থ্য আপডেট সম্পর্কে আপনাকে অবহিত করতে</li>
+                            <li data-bn="privacy-usage-item4">গ্রাহক সহায়তা প্রদান করতে</li>
+                            <li data-bn="privacy-usage-item5">আমাদের পরিষেবাগুলি উন্নত করতে বিশ্লেষণ সংগ্রহ করতে</li>
+                            <li data-bn="privacy-usage-item6">প্রযুক্তিগত সমস্যা সনাক্ত, প্রতিরোধ এবং সমাধান করতে</li>
                         </ul>
                         
-                        <h3>তথ্য সুরক্ষা</h3>
-                        <p>আমরা আপনার ব্যক্তিগত তথ্য রক্ষা করতে উপযুক্ত নিরাপত্তা ব্যবস্থা বাস্তবায়ন করি:</p>
+                        <h3 data-bn="privacy-security-title">তথ্য সুরক্ষা</h3>
+                        <p data-bn="privacy-security-desc">আমরা আপনার ব্যক্তিগত তথ্য রক্ষা করতে উপযুক্ত নিরাপত্তা ব্যবস্থা বাস্তবায়ন করি:</p>
                         <ul>
-                            <li>সমস্ত স্বাস্থ্য ডেটার জন্য এন্ড-টু-এন্ড এনক্রিপশন</li>
-                            <li>নিরাপদ সার্ভার এবং উন্নত নিরাপত্তা প্রোটোকল</li>
-                            <li>নিয়মিত নিরাপত্তা অডিট এবং আপডেট</li>
-                            <li>ব্যক্তিগত স্বাস্থ্য ডেটাতে সীমিত প্রবেশাধিকার</li>
-                            <li>স্বাস্থ্যসেবা ডেটা সুরক্ষা প্রবিধান মেনে চলা</li>
+                            <li data-bn="privacy-security-item1">সমস্ত স্বাস্থ্য ডেটার জন্য এন্ড-টু-এন্ড এনক্রিপশন</li>
+                            <li data-bn="privacy-security-item2">নিরাপদ সার্ভার এবং উন্নত নিরাপত্তা প্রোটোকল</li>
+                            <li data-bn="privacy-security-item3">নিয়মিত নিরাপত্তা অডিট এবং আপডেট</li>
+                            <li data-bn="privacy-security-item4">ব্যক্তিগত স্বাস্থ্য ডেটাতে সীমিত প্রবেশাধিকার</li>
+                            <li data-bn="privacy-security-item5">স্বাস্থ্যসেবা ডেটা সুরক্ষা প্রবিধান মেনে চলা</li>
                         </ul>
                         
-                        <h3>আপনার অধিকার</h3>
-                        <p>আপনার নিম্নলিখিত অধিকার রয়েছে:</p>
-                        <ul>
-                            <li>আপনার ব্যক্তিগত তথ্য অ্যাক্সেস এবং আপডেট করার অধিকার</li>
-                            <li>আপনার ব্যক্তিগত ডেটা মুছে ফেলার অনুরোধ করার অধিকার</li>
-                            <li>আপনার ব্যক্তিগত তথ্য প্রক্রিয়াকরণের বিরোধিতা করার অধিকার</li>
-                            <li>ডেটা পোর্টেবিলিটির অনুরোধ করার অধিকার</li>
-                        </ul>
-                        
-                        <h3>পাস কী নিরাপত্তা</h3>
-                        <p>নিবন্ধনের পরে, আমরা আপনার ইমেল ঠিকানায় একটি অনন্য পাস কী পাঠাব। আপনার স্বাস্থ্য তথ্য অ্যাক্সেস করার জন্য এই পাস কী প্রয়োজন, যা নিশ্চিত করে যে শুধুমাত্র আপনি আপনার সংবেদনশীল স্বাস্থ্য ডেটা দেখতে পারবেন।</p>
+                        <h3 data-bn="privacy-passkey-title">পাস কী নিরাপত্তা</h3>
+                        <p data-bn="privacy-passkey-desc">নিবন্ধনের পরে, আমরা আপনার ইমেল ঠিকানায় একটি অনন্য পাস কী পাঠাব। আপনার স্বাস্থ্য তথ্য অ্যাক্সেস করার জন্য এই পাস কী প্রয়োজন, যা নিশ্চিত করে যে শুধুমাত্র আপনি আপনার সংবেদনশীল স্বাস্থ্য ডেটা দেখতে পারবেন।</p>
                     </div>
-                    <p class="last-updated">সর্বশেষ আপডেট: ১ জানুয়ারী, ২০২৩</p>
+                    <p class="last-updated" data-bn="privacy-updated">সর্বশেষ আপডেট: ১ জানুয়ারী, ২০২৩</p>
                 </div>
             </section>
 
             <!-- Features Section -->
             <section id="features">
-                <h2>আমাদের বৈশিষ্ট্য</h2>
+                <h2 data-bn="features-title">আমাদের বৈশিষ্ট্য</h2>
                 <div class="features">
                     <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>মানসিক স্বাস্থ্য পরীক্ষা</h3>
-                        <p>আপনার মানসিক সুস্থতা, স্ট্রেস স্তর এবং সামগ্রিক মনস্তাত্ত্বিক স্বাস্থ্য পর্যবেক্ষণের জন্য ব্যাপক মানসিক স্বাস্থ্য মূল্যায়ন ব্যক্তিগতকৃত সুপারিশ সহ।</p>
-                        <a href="#" class="feature-btn" onclick="showFeatureDetails('mental')">আরও জানুন</a>
+                        <img src="https://picsum.photos/seed/mentalhealth/80/80.jpg" alt="মানসিক স্বাস্থ্য" class="feature-img">
+                        <h3 data-bn="feature-mental-title">মানসিক স্বাস্থ্য পরীক্ষা</h3>
+                        <p data-bn="feature-mental-desc">আপনার মানসিক সুস্থতা, স্ট্রেস স্তর এবং সামগ্রিক মনস্তাত্ত্বিক স্বাস্থ্য পর্যবেক্ষণের জন্য ব্যাপক মানসিক স্বাস্থ্য মূল্যায়ন ব্যক্তিগতকৃত সুপারিশ সহ।</p>
+                        <a href="#" class="feature-btn" onclick="showFeatureDetails('mental')" data-bn="feature-mental-btn">বিস্তারিত জানুন</a>
                     </div>
                     
                     <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-user-md"></i>
-                        </div>
-                        <h3>পূর্ণ শরীর পরীক্ষা</h3>
-                        <p>সমস্ত প্রধান শরীরের সিস্টেম কভার করে এমন সম্পূর্ণ স্বাস্থ্য মূল্যায়ন, সম্ভাব্য সমস্যাগুলির প্রাথমিক সনাক্তকরণ এবং প্রতিরোধমূলক স্বাস্থ্য সুপারিশ।</p>
-                        <a href="#" class="feature-btn" onclick="showFeatureDetails('body')">আরও জানুন</a>
+                        <img src="https://picsum.photos/seed/physicalhealth/80/80.jpg" alt="শারীরিক স্বাস্থ্য" class="feature-img">
+                        <h3 data-bn="feature-body-title">পূর্ণ শরীর পরীক্ষা</h3>
+                        <p data-bn="feature-body-desc">সমস্ত প্রধান শরীরের সিস্টেম কভার করে এমন সম্পূর্ণ স্বাস্থ্য মূল্যায়ন, সম্ভাব্য সমস্যাগুলির প্রাথমিক সনাক্তকরণ এবং প্রতিরোধমূলক স্বাস্থ্য সুপারিশ।</p>
+                        <a href="#" class="feature-btn" onclick="showFeatureDetails('body')" data-bn="feature-body-btn">বিস্তারিত জানুন</a>
                     </div>
                     
                     <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-baby"></i>
-                        </div>
-                        <h3>গর্ভাবস্থায় যত্ন</h3>
-                        <p>গর্ভবতী মায়েদের জন্য বিশেষায়িত নির্দেশিকা, গর্ভাবস্থার মাইলফলক ট্র্যাকিং, পুষ্টির পরামর্শ এবং গর্ভাবস্থায় নিরাপত্তা সতর্কতা।</p>
-                        <a href="#" class="feature-btn" onclick="showFeatureDetails('pregnancy')">আরও জানুন</a>
+                        <img src="https://picsum.photos/seed/pregnancy/80/80.jpg" alt="গর্ভাবস্থায় যত্ন" class="feature-img">
+                        <h3 data-bn="feature-pregnancy-title">গর্ভাবস্থায় যত্ন</h3>
+                        <p data-bn="feature-pregnancy-desc">গর্ভবতী মায়েদের জন্য বিশেষায়িত নির্দেশিকা, গর্ভাবস্থার মাইলফলক ট্র্যাকিং, পুষ্টির পরামর্শ এবং গর্ভাবস্থায় নিরাপত্তা সতর্কতা।</p>
+                        <a href="#" class="feature-btn" onclick="showFeatureDetails('pregnancy')" data-bn="feature-pregnancy-btn">বিস্তারিত জানুন</a>
                     </div>
                     
                     <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-child"></i>
-                        </div>
-                        <h3>শিশু যত্ন</h3>
-                        <p>ব্যাপক শিশু স্বাস্থ্য পর্যবেক্ষণ, বিকাশমূলক ট্র্যাকিং, টিকাদানের সময়সূচী এবং সর্বোত্তম শিশু বৃদ্ধির জন্য পিতামাতার নির্দেশিকা।</p>
-                        <a href="#" class="feature-btn" onclick="showFeatureDetails('child')">আরও জানুন</a>
+                        <img src="https://picsum.photos/seed/childcare/80/80.jpg" alt="শিশু যত্ন" class="feature-img">
+                        <h3 data-bn="feature-child-title">শিশু যত্ন</h3>
+                        <p data-bn="feature-child-desc">ব্যাপক শিশু স্বাস্থ্য পর্যবেক্ষণ, বিকাশমূলক ট্র্যাকিং, টিকাদানের সময়সূচী, এবং সর্বোত্তম শিশু বৃদ্ধির জন্য পিতামাতার নির্দেশিকা।</p>
+                        <a href="#" class="feature-btn" onclick="showFeatureDetails('child')" data-bn="feature-child-btn">বিস্তারিত জানুন</a>
                     </div>
                     
                     <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3>স্বাস্থ্য সচেতনতা</h3>
-                        <p>বিভিন্ন স্বাস্থ্য অবস্থা, প্রতিরোধমূলক ব্যবস্থা এবং আরও ভাল স্বাস্থ্য ফলাফলের জন্য জীবনধারা পরিবর্তন সম্পর্কে শিক্ষামূলক সংস্থান।</p>
-                        <a href="#" class="feature-btn" onclick="showFeatureDetails('awareness')">আরও জানুন</a>
+                        <img src="https://picsum.photos/seed/awareness/80/80.jpg" alt="স্বাস্থ্য সচেতনতা" class="feature-img">
+                        <h3 data-bn="feature-awareness-title">স্বাস্থ্য সচেতনতা</h3>
+                        <p data-bn="feature-awareness-desc">বিভিন্ন স্বাস্থ্য অবস্থা, প্রতিরোধমূলক ব্যবস্থা এবং আরও ভাল স্বাস্থ্য ফলাফলের জন্য জীবনধারা পরিবর্তন সম্পর্কে শিক্ষামূলক সংস্থান।</p>
+                        <a href="#" class="feature-btn" onclick="showFeatureDetails('awareness')" data-bn="feature-awareness-btn">বিস্তারিত জানুন</a>
                     </div>
                     
                     <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-clipboard-list"></i>
-                        </div>
-                        <h3>ব্যক্তিগতকৃত নির্দেশাবলী</h3>
-                        <p>আপনার নির্দিষ্ট স্বাস্থ্য অবস্থা এবং লক্ষ্যগুলির উপর ভিত্তি করে কাস্টমাইজড স্বাস্থ্য পরিকল্পনা এবং ধাপে ধাপে নির্দেশাবলী।</p>
-                        <a href="#" class="feature-btn" onclick="showFeatureDetails('instructions')">আরও জানুন</a>
+                        <img src="https://picsum.photos/seed/instructions/80/80.jpg" alt="ব্যক্তিগতকৃত নির্দেশাবলী" class="feature-img">
+                        <h3 data-bn="feature-instructions-title">ব্যক্তিগতকৃত নির্দেশাবলী</h3>
+                        <p data-bn="feature-instructions-desc">আপনার নির্দিষ্ট স্বাস্থ্য অবস্থা এবং লক্ষ্যগুলির উপর ভিত্তি করে কাস্টমাইজড স্বাস্থ্য পরিকল্পনা এবং ধাপে ধাপে নির্দেশাবলী।</p>
+                        <a href="#" class="feature-btn" onclick="showFeatureDetails('instructions')" data-bn="feature-instructions-btn">বিস্তারিত জানুন</a>
                     </div>
                 </div>
             </section>
 
             <!-- Registration Section -->
             <section id="register">
-                <h2>আপনার স্বাস্থ্য যাত্রা শুরু করুন</h2>
+                <h2 data-bn="register-title">আপনার স্বাস্থ্য যাত্রা শুরু করুন</h2>
                 <div class="registration-form">
                     <form id="registrationForm">
                         <div class="form-group">
-                            <label for="name">পূর্ণ নাম</label>
+                            <label for="name" data-bn="form-name-label">পূর্ণ নাম</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="age">বয়স</label>
+                            <label for="age" data-bn="form-age-label">বয়স</label>
                             <input type="number" id="age" name="age" min="1" max="120" required>
                         </div>
                         <div class="form-group">
-                            <label for="location">অবস্থান</label>
+                            <label for="location" data-bn="form-location-label">অবস্থান</label>
                             <input type="text" id="location" name="location" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">ইমেল ঠিকানা</label>
+                            <label for="email" data-bn="form-email-label">ইমেল ঠিকানা</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="health-focus">প্রাথমিক স্বাস্থ্য ফোকাস</label>
+                            <label for="health-focus" data-bn="form-focus-label">প্রাথমিক স্বাস্থ্য ফোকাস</label>
                             <select id="health-focus" name="health-focus" required>
-                                <option value="">আপনার প্রাথমিক স্বাস্থ্য ফোকাস নির্বাচন করুন</option>
-                                <option value="mental">মানসিক স্বাস্থ্য</option>
-                                <option value="body">পূর্ণ শরীর পরীক্ষা</option>
-                                <option value="pregnancy">গর্ভাবস্থায় যত্ন</option>
-                                <option value="child">শিশু যত্ন</option>
+                                <option value="" data-bn="form-focus-placeholder">আপনার প্রাথমিক স্বাস্থ্য ফোকাস নির্বাচন করুন</option>
+                                <option value="mental" data-bn="form-focus-mental">মানসিক স্বাস্থ্য</option>
+                                <option value="body" data-bn="form-focus-body">পূর্ণ শরীর পরীক্ষা</option>
+                                <option value="pregnancy" data-bn="form-focus-pregnancy">গর্ভাবস্থায় যত্ন</option>
+                                <option value="child" data-bn="form-focus-child">শিশু যত্ন</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>
                                 <input type="checkbox" id="terms" name="terms" required>
-                                আমি গোপনীয়তা নীতি এবং পরিষেবার শর্তাবলীতে সম্মত
+                                <span data-bn="form-terms">আমি গোপনীয়তা নীতি এবং পরিষেবার শর্তাবলীতে সম্মত</span>
                             </label>
                         </div>
-                        <button type="submit" class="btn">বিনামূল্যে সংস্করণের জন্য নিবন্ধন করুন</button>
+                        <button type="submit" class="btn" data-bn="form-submit">বিনামূল্যে সংস্করণের জন্য নিবন্ধন করুন</button>
                     </form>
                 </div>
             </section>
 
             <!-- Health Conditions Section -->
             <section id="health" style="display: none;">
-                <h2>আপনার স্বাস্থ্য অবস্থা নির্বাচন করুন</h2>
+                <h2 data-bn="health-title">আপনার স্বাস্থ্য অবস্থা নির্বাচন করুন</h2>
                 <div class="health-conditions">
                     <div class="condition-tabs">
-                        <button class="tab-btn active" data-tab="mental-conditions">মানসিক স্বাস্থ্য</button>
-                        <button class="tab-btn" data-tab="physical-conditions">শারীরিক স্বাস্থ্য</button>
-                        <button class="tab-btn" data-tab="pregnancy-conditions">গর্ভাবস্থা</button>
-                        <button class="tab-btn" data-tab="child-conditions">শিশু স্বাস্থ্য</button>
+                        <button class="tab-btn active" data-tab="mental-conditions" data-bn="tab-mental">মানসিক স্বাস্থ্য</button>
+                        <button class="tab-btn" data-tab="physical-conditions" data-bn="tab-physical">শারীরিক স্বাস্থ্য</button>
+                        <button class="tab-btn" data-tab="pregnancy-conditions" data-bn="tab-pregnancy">গর্ভাবস্থা</button>
+                        <button class="tab-btn" data-tab="child-conditions" data-bn="tab-child">শিশু স্বাস্থ্য</button>
                     </div>
                     
                     <div class="tab-content active" id="mental-conditions">
                         <div class="condition-info">
-                            <h3>মানসিক স্বাস্থ্য অবস্থা নির্বাচন করুন</h3>
+                            <h3 data-bn="mental-select-title">মানসিক স্বাস্থ্য অবস্থা নির্বাচন করুন</h3>
                             <select id="mental-condition-select" class="form-group">
-                                <option value="">একটি অবস্থা নির্বাচন করুন</option>
-                                <option value="anxiety">উদ্বেগজনিত ব্যাধি</option>
-                                <option value="depression">অবসাদ</option>
-                                <option value="stress">দীর্ঘস্থায়ী স্ট্রেস</option>
-                                <option value="insomnia">অনিদ্রা</option>
-                                <option value="bipolar">দ্বিমেরুদণ্ড ব্যাধি</option>
+                                <option value="" data-bn="mental-select-placeholder">একটি অবস্থা নির্বাচন করুন</option>
+                                <option value="anxiety" data-bn="mental-anxiety">উদ্বেগজনিত ব্যাধি</option>
+                                <option value="depression" data-bn="mental-depression">অবসাদ</option>
+                                <option value="stress" data-bn="mental-stress">দীর্ঘস্থায়ী স্ট্রেস</option>
+                                <option value="insomnia" data-bn="mental-insomnia">অনিদ্রা</option>
+                                <option value="bipolar" data-bn="mental-bipolar">দ্বিমেরুদণ্ড ব্যাধি</option>
                             </select>
-                            <button class="btn btn-secondary" onclick="showTreatment('mental')">চিকিৎসা পরিকল্পনা পান</button>
+                            <button class="btn" onclick="showTreatment('mental')" data-bn="mental-treatment-btn">চিকিৎসা পরিকল্পনা পান</button>
                         </div>
                     </div>
                     
                     <div class="tab-content" id="physical-conditions">
                         <div class="condition-info">
-                            <h3>শারীরিক স্বাস্থ্য অবস্থা নির্বাচন করুন</h3>
+                            <h3 data-bn="physical-select-title">শারীরিক স্বাস্থ্য অবস্থা নির্বাচন করুন</h3>
                             <select id="physical-condition-select" class="form-group">
-                                <option value="">একটি অবস্থা নির্বাচন করুন</option>
-                                <option value="diabetes">ডায়াবেটিস</option>
-                                <option value="hypertension">উচ্চ রক্তচাপ</option>
-                                <option value="heart">হৃদরোগ</option>
-                                <option value="obesity">স্থূলতা</option>
-                                <option value="arthritis">আর্থ্রাইটিস</option>
+                                <option value="" data-bn="physical-select-placeholder">একটি অবস্থা নির্বাচন করুন</option>
+                                <option value="diabetes" data-bn="physical-diabetes">ডায়াবেটিস</option>
+                                <option value="hypertension" data-bn="physical-hypertension">উচ্চ রক্তচাপ</option>
+                                <option value="heart" data-bn="physical-heart">হৃদরোগ</option>
+                                <option value="obesity" data-bn="physical-obesity">স্থূলতা</option>
+                                <option value="arthritis" data-bn="physical-arthritis">আর্থ্রাইটিস</option>
                             </select>
-                            <button class="btn btn-secondary" onclick="showTreatment('physical')">চিকিৎসা পরিকল্পনা পান</button>
+                            <button class="btn" onclick="showTreatment('physical')" data-bn="physical-treatment-btn">চিকিৎসা পরিকল্পনা পান</button>
                         </div>
                     </div>
                     
                     <div class="tab-content" id="pregnancy-conditions">
                         <div class="condition-info">
-                            <h3>গর্ভাবস্থার অবস্থা নির্বাচন করুন</h3>
+                            <h3 data-bn="pregnancy-select-title">গর্ভাবস্থার অবস্থা নির্বাচন করুন</h3>
                             <select id="pregnancy-condition-select" class="form-group">
-                                <option value="">একটি অবস্থা নির্বাচন করুন</option>
-                                <option value="gestational-diabetes">গর্ভকালীন ডায়াবেটিস</option>
-                                <option value="preeclampsia">প্রি-এক্ল্যাম্পসিয়া</option>
-                                <option value="morning-sickness">সকালের অসুস্থতা</option>
-                                <option value="anemia">রক্তস্বল্পতা</option>
-                                <option value="preterm-labor">অকাল প্রসবের ঝুঁকি</option>
+                                <option value="" data-bn="pregnancy-select-placeholder">একটি অবস্থা নির্বাচন করুন</option>
+                                <option value="gestational-diabetes" data-bn="pregnancy-diabetes">গর্ভকালীন ডায়াবেটিস</option>
+                                <option value="preeclampsia" data-bn="pregnancy-preeclampsia">প্রি-এক্ল্যাম্পসিয়া</option>
+                                <option value="morning-sickness" data-bn="pregnancy-sickness">সকালের অসুস্থতা</option>
+                                <option value="anemia" data-bn="pregnancy-anemia">রক্তস্বল্পতা</option>
+                                <option value="preterm-labor" data-bn="pregnancy-preterm">অকাল প্রসবের ঝুঁকি</option>
                             </select>
-                            <button class="btn btn-secondary" onclick="showTreatment('pregnancy')">চিকিৎসা পরিকল্পনা পান</button>
+                            <button class="btn" onclick="showTreatment('pregnancy')" data-bn="pregnancy-treatment-btn">চিকিৎসা পরিকল্পনা পান</button>
                         </div>
                     </div>
                     
                     <div class="tab-content" id="child-conditions">
                         <div class="condition-info">
-                            <h3>শিশু স্বাস্থ্য অবস্থা নির্বাচন করুন</h3>
+                            <h3 data-bn="child-select-title">শিশু স্বাস্থ্য অবস্থা নির্বাচন করুন</h3>
                             <select id="child-condition-select" class="form-group">
-                                <option value="">একটি অবস্থা নির্বাচন করুন</option>
-                                <option value="asthma">হাঁপানি</option>
-                                <option value="allergies">অ্যালার্জি</option>
-                                <option value="adhd">এডিএইচডি</option>
-                                <option value="obesity">শৈশব স্থূলতা</option>
-                                <option value="autism">অটিজম স্পেকট্রাম</option>
+                                <option value="" data-bn="child-select-placeholder">একটি অবস্থা নির্বাচন করুন</option>
+                                <option value="asthma" data-bn="child-asthma">হাঁপানি</option>
+                                <option value="allergies" data-bn="child-allergies">অ্যালার্জি</option>
+                                <option value="adhd" data-bn="child-adhd">এডিএইচডি</option>
+                                <option value="obesity" data-bn="child-obesity">শৈশব স্থূলতা</option>
+                                <option value="autism" data-bn="child-autism">অটিজম স্পেকট্রাম</option>
                             </select>
-                            <button class="btn btn-secondary" onclick="showTreatment('child')">চিকিৎসা পরিকল্পনা পান</button>
+                            <button class="btn" onclick="showTreatment('child')" data-bn="child-treatment-btn">চিকিৎসা পরিকল্পনা পান</button>
                         </div>
                     </div>
                 </div>
@@ -857,83 +1154,273 @@
 
             <!-- Treatment Plan Section -->
             <section id="treatment" style="display: none;">
-                <h2>আপনার ব্যক্তিগতকৃত চিকিৎসা পরিকল্পনা</h2>
+                <h2 data-bn="treatment-title">আপনার ব্যক্তিগতকৃত চিকিৎসা পরিকল্পনা</h2>
                 <div class="health-conditions">
                     <div class="condition-info">
-                        <h3 id="condition-name">অবস্থার নাম</h3>
-                        <p id="condition-description">অবস্থা এবং আপনার স্বাস্থ্যের উপর এর প্রভাবের বর্ণনা।</p>
+                        <h3 id="condition-name" data-bn="condition-name">অবস্থার নাম</h3>
+                        <p id="condition-description" data-bn="condition-desc">অবস্থা এবং আপনার স্বাস্থ্যের উপর এর প্রভাবের বর্ণনা।</p>
                         
                         <div class="treatment-steps">
-                            <h4>চিকিৎসা পদক্ষেপ</h4>
+                            <h4 data-bn="treatment-steps-title">চিকিৎসা পদক্ষেপ</h4>
                             <ol id="treatment-steps-list">
                                 <!-- চিকিৎসা পদক্ষেপ এখানে পূরণ করা হবে -->
                             </ol>
                         </div>
                         
                         <div class="treatment-steps" style="margin-top: 2rem;">
-                            <h4>জীবনধারা সুপারিশ</h4>
+                            <h4 data-bn="treatment-lifestyle-title">জীবনধারা সুপারিশ</h4>
                             <ul id="lifestyle-recommendations">
                                 <!-- জীবনধারা সুপারিশ এখানে পূরণ করা হবে -->
                             </ul>
                         </div>
                         
                         <div class="treatment-steps" style="margin-top: 2rem;">
-                            <h4>অনুসরণের সময়সূচী</h4>
+                            <h4 data-bn="treatment-followup-title">অনুসরণের সময়সূচী</h4>
                             <p id="follow-up-schedule">
                                 <!-- অনুসরণের সময়সূচী এখানে পূরণ করা হবে -->
                             </p>
                         </div>
                         
                         <div style="text-align: center; margin-top: 2rem;">
-                            <button class="btn" onclick="startProgressTracking()">অগ্রগতি ট্র্যাকিং শুরু করুন</button>
+                            <button class="btn" onclick="startProgressTracking()" data-bn="treatment-progress-btn">অগ্রগতি ট্র্যাকিং শুরু করুন</button>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Progress Tracker Section -->
-            <section id="progress" style="display: none;">
-                <h2>আপনার স্বাস্থ্য অগ্রগতি</h2>
-                <div class="progress-tracker">
-                    <div class="progress-steps">
-                        <div class="progress-step active">
-                            <div class="step-circle">১</div>
-                            <div class="step-label">প্রাথমিক মূল্যায়ন</div>
-                            <div class="progress-bar"></div>
+            <!-- Why We Care Section -->
+            <section id="why-care">
+                <h2 data-bn="why-care-title">আমরা কেন রোগীদের যত্ন করি</h2>
+                <div class="why-care">
+                    <div class="care-cards">
+                        <div class="care-card">
+                            <img src="https://picsum.photos/seed/empathy/100/100.jpg" alt="সহানুভূতি" class="care-img">
+                            <h3 data-bn="care-empathy-title">সহানুভূতি</h3>
+                            <p data-bn="care-empathy-desc">আমরা বুঝি যে অসুস্থতা শুধু শারীরিক নয়, এটি মানসিক এবং আবেগিকও। আমরা প্রতিটি রোগীর প্রতি সহানুভূতিশীল থাকি।</p>
                         </div>
-                        <div class="progress-step">
-                            <div class="step-circle">২</div>
-                            <div class="step-label">চিকিৎসা শুরু</div>
-                            <div class="progress-bar"></div>
+                        
+                        <div class="care-card">
+                            <img src="https://picsum.photos/seed/dignity/100/100.jpg" alt="সম্মান" class="care-img">
+                            <h3 data-bn="care-dignity-title">সম্মান</h3>
+                            <p data-bn="care-dignity-desc">প্রতিটি রোগীর সম্মান রক্ষা করা আমাদের প্রথম অগ্রাধিকার। আমরা নিশ্চিত করি যে তারা সম্মানের সাথে চিকিৎসা পায়।</p>
                         </div>
-                        <div class="progress-step">
-                            <div class="step-circle">৩</div>
-                            <div class="step-label">প্রথম চেক-আপ</div>
-                            <div class="progress-bar"></div>
+                        
+                        <div class="care-card">
+                            <img src="https://picsum.photos/seed/holistic/100/100.jpg" alt="সামগ্রিক যত্ন" class="care-img">
+                            <h3 data-bn="care-holistic-title">সামগ্রিক যত্ন</h3>
+                            <p data-bn="care-holistic-desc">আমরা শুধু লক্ষণগুলি চিকিৎসা করি না, আমরা সম্পূর্ণ ব্যক্তির যত্ন নেই - শারীরিক, মানসিক এবং আবেগিকভাবে।</p>
                         </div>
-                        <div class="progress-step">
-                            <div class="step-circle">৪</div>
-                            <div class="step-label">অগ্রগতি পর্যালোচনা</div>
-                            <div class="progress-bar"></div>
+                        
+                        <div class="care-card">
+                            <img src="https://picsum.photos/seed/continuity/100/100.jpg" alt="ধারাবাহিকতা" class="care-img">
+                            <h3 data-bn="care-continuity-title">ধারাবাহিকতা</h3>
+                            <p data-bn="care-continuity-desc">আমরা নিশ্চিত করি যে চিকিৎসার ধারাবাহিকতা বজায় রাখা হয়, যাতে রোগী সুস্থ হওয়া পর্যন্ত সঠিক যত্ন পায়।</p>
                         </div>
-                        <div class="progress-step">
-                            <div class="step-circle">৫</div>
-                            <div class="step-label">সুস্থতা</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Health Tips Section -->
+            <section id="health-tips">
+                <h2 data-bn="tips-title">স্বাস্থ্য টিপস</h2>
+                <div class="health-tips">
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <img src="https://picsum.photos/seed/nutrition/300/180.jpg" alt="পুষ্টি" class="tip-img">
+                            <h3 data-bn="tips-nutrition-title">সুষম পুষ্টি</h3>
+                            <p data-bn="tips-nutrition-desc">সুষম খাদ্য গ্রহণ করুন, প্রচুর ফল ও শাকসবজি খান, এবং প্রতিদিন পর্যাপ্ত পানি পান করুন।</p>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <img src="https://picsum.photos/seed/exercise/300/180.jpg" alt="ব্যায়াম" class="tip-img">
+                            <h3 data-bn="tips-exercise-title">নিয়মিত ব্যায়াম</h3>
+                            <p data-bn="tips-exercise-desc">প্রতিদিন কমপক্ষে ৩০ মিনিট ব্যায়াম করুন, যেমন হাঁটা, সাঁতার বা যোগব্যায়াম।</p>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <img src="https://picsum.photos/seed/sleep/300/180.jpg" alt="ঘুম" class="tip-img">
+                            <h3 data-bn="tips-sleep-title">পর্যাপ্ত ঘুম</h3>
+                            <p data-bn="tips-sleep-desc">প্রতিদিন ৭-৮ ঘন্টা ঘুমানোর চেষ্টা করুন, এটি আপনার শরীর এবং মন উভয়ের জন্যই উপকারী।</p>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <img src="https://picsum.photos/seed/stress/300/180.jpg" alt="স্ট্রেস ম্যানেজমেন্ট" class="tip-img">
+                            <h3 data-bn="tips-stress-title">স্ট্রেস ম্যানেজমেন্ট</h3>
+                            <p data-bn="tips-stress-desc">ধ্যান, গভীর শ্বাস নেওয়া, বা আপনার পছন্দের শখের মাধ্যমে স্ট্রেস কমানোর চেষ্টা করুন।</p>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <img src="https://picsum.photos/seed/hygiene/300/180.jpg" alt="স্বাস্থ্যবিধি" class="tip-img">
+                            <h3 data-bn="tips-hygiene-title">স্বাস্থ্যবিধি</h3>
+                            <p data-bn="tips-hygiene-desc">নিয়মিত হাত ধোয়া, দাঁত ব্রাশ করা, এবং পরিষ্কার-পরিচ্ছন্ন থাকা রোগ প্রতিরোধে সাহায্য করে।</p>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <img src="https://picsum.photos/seed/checkup/300/180.jpg" alt="নিয়মিত পরীক্ষা" class="tip-img">
+                            <h3 data-bn="tips-checkup-title">নিয়মিত পরীক্ষা</h3>
+                            <p data-bn="tips-checkup-desc">বছরে অন্তত একবার সম্পূর্ণ স্বাস্থ্য পরীক্ষা করান, এটি প্রাথমিক পর্যায়ে রোগ সনাক্ষ করতে সাহায্য করে।</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Symptom Awareness Section -->
+            <section id="symptom-awareness">
+                <h2 data-bn="symptoms-title">উপসর্গ সচেতনতা গাইড</h2>
+                <div class="symptom-awareness">
+                    <p data-bn="symptoms-desc">আপনার উপসর্গগুলি নির্বাচন করুন এবং সম্ভাব্য স্বাস্থ্য সমস্যা সম্পর্কে জানুন। এটি কোনো চিকিৎসা নয়, শুধুমাত্র সচেতনতার জন্য।</p>
+                    
+                    <div class="symptom-categories">
+                        <div class="category-btn active" data-category="general" data-bn="symptom-general">সাধারণ</div>
+                        <div class="category-btn" data-category="head" data-bn="symptom-head">মাথা</div>
+                        <div class="category-btn" data-category="chest" data-bn="symptom-chest">বুক</div>
+                        <div class="category-btn" data-category="abdomen" data-bn="symptom-abdomen">পেট</div>
+                        <div class="category-btn" data-category="skin" data-bn="symptom-skin">ত্বক</div>
+                    </div>
+                    
+                    <div class="symptom-list active" id="general-symptoms">
+                        <div class="symptom-item">
+                            <input type="checkbox" id="fever" name="symptom" value="fever">
+                            <label for="fever" data-bn="symptom-fever">জ্বর</label>
+                        </div>
+                        <div class="symptom-item">
+                            <input type="checkbox" id="fatigue" name="symptom" value="fatigue">
+                            <label for="fatigue" data-bn="symptom-fatigue">ক্লান্তি</label>
+                        </div>
+                        <div class="symptom-item">
+                            <input type="checkbox" id="weight-loss" name="symptom" value="weight-loss">
+                            <label for="weight-loss" data-bn="symptom-weight">ওজন হ্রাস</label>
+                        </div>
+                        <div class="symptom-item">
+                            <input type="checkbox" id="appetite-loss" name="symptom" value="appetite-loss">
+                            <label for="appetite-loss" data-bn="symptom-appetite">ক্ষুধা কমে যাওয়া</label>
                         </div>
                     </div>
                     
-                    <div style="text-align: center; margin-top: 2rem;">
-                        <button class="btn" onclick="showReviewSection()">একটি পর্যালোচনা দিন</button>
+                    <div class="symptom-list" id="head-symptoms">
+                        <div class="symptom-item">
+                            <input type="checkbox" id="headache" name="symptom" value="headache">
+                            <label for="headache" data-bn="symptom-headache">মাথাব্যথা</label>
+                        </div>
+                        <div class="symptom-item">
+                            <input type="checkbox" id="dizziness" name="symptom" value="dizziness">
+                            <label for="dizziness" data-bn="symptom-dizziness">মাথা ঘোরা</label>
+                        </div>
+                        <div class="symptom-item">
+                            <input type="checkbox" id="vision-problems" name="symptom" value="vision-problems">
+                            <label for="vision-problems" data-bn="symptom-vision">দৃষ্টি সমস্যা</label>
+                        </div>
+                    </div>
+                    
+                    <div class="symptom-list" id="chest-symptoms">
+                        <div class="symptom-item">
+                            <input type="checkbox" id="chest-pain" name="symptom" value="chest-pain">
+                            <label for="chest-pain" data-bn="symptom-chest-pain">বুকে ব্যথা</label>
+                        </div>
+                        <div class="symptom-item">
+                            <input type="checkbox" id="shortness-breath" name="symptom" value="shortness-breath">
+                            <label for="shortness-breath" data-bn="symptom-breath">শ্বাসকষ্ট</label>
+                        </div>
+                        <div class="symptom-item">
+                            <input type="checkbox" id="cough" name="symptom" value="cough">
+                            <label for="cough" data-bn="symptom-cough">কাশি</label>
+                        </div>
+                    </div>
+                    
+                    <div class="symptom-list" id="abdomen-symptoms">
+                        <div class="symptom-item">
+                            <input type="checkbox" id="abdominal-pain" name="symptom" value="abdominal-pain">
+                            <label for="abdominal-pain" data-bn="symptom-abdominal">পেটে ব্যথা</label>
+                        </div>
+                        <div class="symptom-item">
+                            <input type="checkbox" id="nausea" name="symptom" value="nausea">
+                            <label for="nausea" data-bn="symptom-nausea">বমি বমি ভাব</label>
+                        </div>
+                        <div class="symptom-item">
+                            <input type="checkbox" id="diarrhea" name="symptom" value="diarrhea">
+                            <label for="diarrhea" data-bn="symptom-diarrhea">ডায়রিয়া</label>
+                        </div>
+                    </div>
+                    
+                    <div class="symptom-list" id="skin-symptoms">
+                        <div class="symptom-item">
+                            <input type="checkbox" id="rash" name="symptom" value="rash">
+                            <label for="rash" data-bn="symptom-rash">চুলকানি</label>
+                        </div>
+                        <div class="symptom-item">
+                            <input type="checkbox" id="redness" name="symptom" value="redness">
+                            <label for="redness" data-bn="symptom-redness">লালভাব</label>
+                        </div>
+                        <div class="symptom-item">
+                            <input type="checkbox" id="swelling" name="symptom" value="swelling">
+                            <label for="swelling" data-bn="symptom-swelling">ফোলা</label>
+                        </div>
+                    </div>
+                    
+                    <button class="btn" onclick="checkSymptoms()" data-bn="symptoms-check-btn">উপসর্গ পরীক্ষা করুন</button>
+                    
+                    <div class="result-container" id="symptom-result">
+                        <h4 data-bn="symptoms-result-title">সম্ভাব্য স্বাস্থ্য সমস্যা</h4>
+                        <div id="possible-conditions">
+                            <!-- Results will be displayed here -->
+                        </div>
+                        <p style="margin-top: 1rem; font-style: italic;" data-bn="symptoms-disclaimer">দয়া করে মনে রাখবেন, এটি কোনো চিকিৎসা নয়। সঠিক রোগ নির্ণয়ের জন্য একজন চিকিৎসকের সাথে পরামর্শ করুন।</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quiz Section -->
+            <section id="quiz">
+                <h2 data-bn="quiz-title">স্বাস্থ্য কুইজ</h2>
+                <div class="quiz-section">
+                    <div class="quiz-container">
+                        <div class="quiz-progress">
+                            <div class="progress-step active">1</div>
+                            <div class="progress-step">2</div>
+                            <div class="progress-step">3</div>
+                            <div class="progress-step">4</div>
+                            <div class="progress-step">5</div>
+                        </div>
+                        
+                        <div class="question-container">
+                            <h3 id="question-text" data-bn="quiz-question">প্রতিদিন কত গ্লাস পানি পান করা উচিত?</h3>
+                            <div class="answer-options">
+                                <div class="answer-option" data-answer="a">
+                                    <span data-bn="quiz-option1">৪-৫ গ্লাস</span>
+                                </div>
+                                <div class="answer-option" data-answer="b">
+                                    <span data-bn="quiz-option2">৬-৮ গ্লাস</span>
+                                </div>
+                                <div class="answer-option" data-answer="c">
+                                    <span data-bn="quiz-option3">৮-১০ গ্লাস</span>
+                                </div>
+                                <div class="answer-option" data-answer="d">
+                                    <span data-bn="quiz-option4">১০-১২ গ্লাস</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-navigation">
+                            <button class="btn" id="prev-btn" onclick="previousQuestion()" disabled data-bn="quiz-prev">পূর্ববর্তী</button>
+                            <button class="btn" id="next-btn" onclick="nextQuestion()" data-bn="quiz-next">পরবর্তী</button>
+                            <button class="btn" id="submit-btn" style="display: none;" onclick="submitQuiz()" data-bn="quiz-submit">জমা দিন</button>
+                        </div>
+                        
+                        <div id="quiz-result" style="display: none; margin-top: 2rem;">
+                            <h3 data-bn="quiz-result-title">আপনার ফলাফল</h3>
+                            <p id="quiz-score"></p>
+                            <p id="quiz-message"></p>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- Review Section -->
-            <section id="review" style="display: none;">
-                <h2>আপনার অভিজ্ঞতা শেয়ার করুন</h2>
+            <section id="review">
+                <h2 data-bn="review-title">আপনার অভিজ্ঞতা শেয়ার করুন</h2>
                 <div class="review-section">
                     <div class="review-form">
-                        <p>আমাদের পরিষেবাগুলি কয়েক দিন ব্যবহার করার পরে, আমাদের উন্নতি করতে সাহায্য করার জন্য আপনার অভিজ্ঞতা শেয়ার করুন।</p>
+                        <p data-bn="review-desc">আমাদের পরিষেবাগুলি কয়েক দিন ব্যবহার করার পরে, আমাদের উন্নতি করতে সাহায্য করার জন্য আপনার অভিজ্ঞতা শেয়ার করুন।</p>
                         
                         <div class="rating" id="rating">
                             <i class="far fa-star" data-rating="1"></i>
@@ -944,14 +1431,155 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="review-text">আপনার পর্যালোচনা</label>
-                            <textarea id="review-text" class="review-text" placeholder="স্বাস্থ্যরক্ষী সম্পর্কে আপনার অভিজ্ঞতা সম্পর্কে আমাদের জানান..."></textarea>
+                            <label for="review-text" data-bn="review-label">আপনার পর্যালোচনা</label>
+                            <textarea id="review-text" class="review-text" placeholder="স্বাস্থ্যসুরক্ষা সম্পর্কে আপনার অভিজ্ঞতা সম্পর্কে আমাদের জানান..." data-bn="review-placeholder"></textarea>
                         </div>
                         
-                        <button class="btn" onclick="submitReview()">পর্যালোচনা জমা দিন</button>
+                        <button class="btn" onclick="submitReview()" data-bn="review-submit">পর্যালোচনা জমা দিন</button>
                     </div>
                 </div>
             </section>
+
+            <!-- App Rating Section -->
+            <section id="rating">
+                <h2 data-bn="rating-title">অ্যাপ রেটিং</h2>
+                <div class="app-rating">
+                    <div class="rating-overview">
+                        <div class="overall-rating">
+                            <div class="rating-number">4.6</div>
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p data-bn="rating-total">২,৪৫৮ টি রেটিং</p>
+                        </div>
+                        
+                        <div class="rating-bars">
+                            <div class="rating-bar">
+                                <div class="rating-label" data-bn="rating-5">৫ তারা</div>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 65%;"></div>
+                                </div>
+                                <div class="rating-percentage">৬৫%</div>
+                            </div>
+                            <div class="rating-bar">
+                                <div class="rating-label" data-bn="rating-4">৪ তারা</div>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 20%;"></div>
+                                </div>
+                                <div class="rating-percentage">২০%</div>
+                            </div>
+                            <div class="rating-bar">
+                                <div class="rating-label" data-bn="rating-3">৩ তারা</div>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 10%;"></div>
+                                </div>
+                                <div class="rating-percentage">১০%</div>
+                            </div>
+                            <div class="rating-bar">
+                                <div class="rating-label" data-bn="rating-2">২ তারা</div>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 3%;"></div>
+                                </div>
+                                <div class="rating-percentage">৩%</div>
+                            </div>
+                            <div class="rating-bar">
+                                <div class="rating-label" data-bn="rating-1">১ তারা</div>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 2%;"></div>
+                                </div>
+                                <div class="rating-percentage">২%</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="user-reviews">
+                        <h3 data-bn="rating-reviews-title">ব্যবহারকারী পর্যালোচনা</h3>
+                        
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <img src="https://picsum.photos/seed/user1/40/40.jpg" alt="ব্যবহারকারী" class="reviewer-avatar">
+                                    <div>
+                                        <div class="reviewer-name">রহিমা খান</div>
+                                        <div class="review-date">২ সপ্তাহ আগে</div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="review-text">
+                                <p data-bn="rating-review1">এই অ্যাপটি আমার গর্ভাবস্থায় খুবই সাহায্য করেছে। এটি আমাকে আমার স্বাস্থ্য ট্র্যাক করতে এবং প্রয়োজনীয় তথ্য পেতে সাহায্য করেছে।</p>
+                            </div>
+                        </div>
+                        
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <img src="https://picsum.photos/seed/user2/40/40.jpg" alt="ব্যবহারকারী" class="reviewer-avatar">
+                                    <div>
+                                        <div class="reviewer-name">সাকিব আহমেদ</div>
+                                        <div class="review-date">১ মাস আগে</div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="review-text">
+                                <p data-bn="rating-review2">অ্যাপটি ব্যবহার করা সহজ এবং এতে অনেক উপকারী তথ্য রয়েছে। আমি এর উপসর্গ পরীক্ষক বৈশিষ্ট্যটি পছন্দ করি।</p>
+                            </div>
+                        </div>
+                        
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <img src="https://picsum.photos/seed/user3/40/40.jpg" alt="ব্যবহারকারী" class="reviewer-avatar">
+                                    <div>
+                                        <div class="reviewer-name">ফারজানা ইসলাম</div>
+                                        <div class="review-date">১.৫ মাস আগে</div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                            <div class="review-text">
+                                <p data-bn="rating-review3">আমার শিশুর স্বাস্থ্য ট্র্যাক করার জন্য এই অ্যাপটি খুবই উপকারী। এটি আমাকে টিকাদানের সময়সূচী মনে রাখতে সাহায্য করে।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aside Section -->
+            <aside class="aside-section">
+                <div class="aside-content">
+                    <img src="https://picsum.photos/seed/healthapp/300/200.jpg" alt="স্বাস্থ্যসুরক্ষা অ্যাপ" class="aside-img">
+                    <h3 data-bn="aside-title">আমাদের অ্যাপ ডাউনলোড করুন</h3>
+                    <p data-bn="aside-desc">আমাদের অ্যাপটি ডাউনলোড করে যেকোনো সময় আপনার স্বাস্থ্য ট্র্যাক করুন এবং ব্যক্তিগতকৃত স্বাস্থ্য টিপস পান।</p>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <button class="btn" data-bn="aside-google">Google Play</button>
+                        <button class="btn" data-bn="aside-apple">App Store</button>
+                    </div>
+                </div>
+            </aside>
         </div>
     </main>
 
@@ -964,8 +1592,8 @@
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-linkedin"></i></a>
             </div>
-            <p>&copy; ২০২৩ স্বাস্থ্যরক্ষী। সর্বস্বত্ব সংরক্ষিত।</p>
-            <p>যোগাযোগ: support@swasthyorokhi.com | ১-৮০০-স্বাস্থ্য</p>
+            <p>&copy; ২০২৩ স্বাস্থ্যসুরক্ষা। সর্বস্বত্ব সংরক্ষিত।</p>
+            <p data-bn="footer-contact">যোগাযোগ: info@swasthyosurokkha.com | ১-৮০০-স্বাস্থ্য</p>
         </div>
     </footer>
 
@@ -973,13 +1601,13 @@
     <div class="modal" id="passKeyModal">
         <div class="modal-content">
             <span class="close-modal" id="closeModal">&times;</span>
-            <h2>আপনার সুরক্ষিত পাস কী</h2>
-            <p>আমরা আপনার ইমেল ঠিকানায় একটি অনন্য পাস কী পাঠিয়েছি। আপনার স্বাস্থ্য ড্যাশবোর্ড অ্যাক্সেস করতে নীচে এটি লিখুন।</p>
+            <h2 data-bn="modal-title">আপনার সুরক্ষিত পাস কী</h2>
+            <p data-bn="modal-desc">আমরা আপনার ইমেল ঠিকানায় একটি অনন্য পাস কী পাঠিয়েছি। আপনার স্বাস্থ্য ড্যাশবোর্ড অ্যাক্সেস করতে নীচে এটি লিখুন।</p>
             <div class="form-group">
-                <label for="pass-key">পাস কী</label>
-                <input type="text" id="pass-key" placeholder="আপনার পাস কী লিখুন">
+                <label for="pass-key" data-bn="modal-passkey-label">পাস কী</label>
+                <input type="text" id="pass-key" placeholder="আপনার পাস কী লিখুন" data-bn="modal-passkey-placeholder">
             </div>
-            <button class="btn" onclick="verifyPassKey()">যাচাই করুন এবং চালিয়ে যান</button>
+            <button class="btn" onclick="verifyPassKey()" data-bn="modal-verify">যাচাই করুন এবং চালিয়ে যান</button>
         </div>
     </div>
 
@@ -989,7 +1617,44 @@
     </div>
 
     <script>
+        // Language translations
+        const translations = {
+            bn: {
+                "app-title": "স্বাস্থ্যসুরক্ষা",
+                "tagline": "মায়েদের স্বাস্থ্যসেবা এবং গোপনীয়তা রক্ষায় আপনার সহায়িকা",
+                "nav-home": "হোম",
+                "nav-privacy": "গোপনীয়তা নীতি",
+                "nav-features": "বৈশিষ্ট্য",
+                "nav-register": "নিবন্ধন",
+                "nav-health": "স্বাস্থ্য পরীক্ষা",
+                "nav-why-care": "যত্নের কারণ",
+                "nav-tips": "স্বাস্থ্য টিপস",
+                "nav-symptoms": "উপসর্গ সচেতনতা",
+                "nav-quiz": "কুইজ",
+                "nav-review": "পর্যালোচনা",
+                "nav-rating": "রেটিং",
+                // Add more translations as needed
+            },
+            en: {
+                "app-title": "HealthGuard",
+                "tagline": "Your companion for maternal health care and privacy protection",
+                "nav-home": "Home",
+                "nav-privacy": "Privacy Policy",
+                "nav-features": "Features",
+                "nav-register": "Register",
+                "nav-health": "Health Check",
+                "nav-why-care": "Why We Care",
+                "nav-tips": "Health Tips",
+                "nav-symptoms": "Symptom Awareness",
+                "nav-quiz": "Quiz",
+                "nav-review": "Review",
+                "nav-rating": "Rating",
+                // Add more translations as needed
+            }
+        };
+
         // Global variables
+        let currentLanguage = 'bn';
         let currentStep = 1;
         let selectedRating = 0;
         let userHealthData = {
@@ -1001,6 +1666,78 @@
             condition: '',
             treatmentStarted: false
         };
+        let quizQuestions = [
+            {
+                question: "প্রতিদিন কত গ্লাস পানি পান করা উচিত?",
+                options: ["৪-৫ গ্লাস", "৬-৮ গ্লাস", "৮-১০ গ্লাস", "১০-১২ গ্লাস"],
+                correctAnswer: "c",
+                questionEn: "How many glasses of water should you drink daily?",
+                optionsEn: ["4-5 glasses", "6-8 glasses", "8-10 glasses", "10-12 glasses"]
+            },
+            {
+                question: "প্রতিদিন কত মিনিট ব্যায়াম করা উচিত?",
+                options: ["১৫ মিনিট", "৩০ মিনিট", "৪৫ মিনিট", "৬০ মিনিট"],
+                correctAnswer: "b",
+                questionEn: "How many minutes of exercise should you do daily?",
+                optionsEn: ["15 minutes", "30 minutes", "45 minutes", "60 minutes"]
+            },
+            {
+                question: "গর্ভাবস্থায় কোন খাবার এড়িয়ে চলা উচিত?",
+                options: ["ফল", "কাঁচা মাছ", "অপরিপক্ক মাংস", "সবজি"],
+                correctAnswer: "c",
+                questionEn: "Which food should be avoided during pregnancy?",
+                optionsEn: ["Fruits", "Raw fish", "Cooked meat", "Vegetables"]
+            },
+            {
+                question: "শিশুর প্রথম টিকা কবে দেওয়া উচিত?",
+                options: ["জন্মের ৬ সপ্তাহে", "জন্মের ৮ সপ্তাহে", "জন্মের ১০ সপ্তাহে", "জন্মের ১২ সপ্তাহে"],
+                correctAnswer: "a",
+                questionEn: "When should the first vaccine be given to a baby?",
+                optionsEn: ["6 weeks after birth", "8 weeks after birth", "10 weeks after birth", "12 weeks after birth"]
+            },
+            {
+                question: "মানসিক স্বাস্থ্যের জন্য কোনটি সবচেয়ে উপকারী?",
+                options: ["অতিরিক্ত কাজ করা", "পর্যাপ্ত ঘুম", "সোশ্যাল মিডিয়া ব্যবহার", "সবগুলো"],
+                correctAnswer: "d",
+                questionEn: "Which is most beneficial for mental health?",
+                optionsEn: ["Working excessively", "Getting enough sleep", "Using social media", "All of the above"]
+            }
+        ];
+        let userAnswers = [];
+
+        // Language switcher
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                switchLanguage(lang);
+            });
+        });
+
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
+            
+            // Update text content
+            document.querySelectorAll('[data-bn]').forEach(element => {
+                const key = element.getAttribute('data-bn');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang === 'bn' ? 'bn' : 'en';
+            
+            // Update quiz questions if on quiz section
+            if (document.getElementById('quiz').style.display !== 'none') {
+                updateQuizQuestion();
+            }
+        }
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1041,7 +1778,10 @@
             document.getElementById('passKeyModal').style.display = 'flex';
             
             // Simulate sending pass key to email
-            showNotification(`${userHealthData.email} এ একটি পাস কী পাঠানো হয়েছে`);
+            const message = currentLanguage === 'bn' 
+                ? `${userHealthData.email} এ একটি পাস কী পাঠানো হয়েছে`
+                : `A pass key has been sent to ${userHealthData.email}`;
+            showNotification(message);
         });
 
         // Close modal
@@ -1058,12 +1798,19 @@
             if (passKey.length >= 6) {
                 document.getElementById('passKeyModal').style.display = 'none';
                 document.getElementById('health').style.display = 'block';
-                showNotification('পাস কী সফলভাবে যাচাই করা হয়েছে!');
+                
+                const message = currentLanguage === 'bn' 
+                    ? 'পাস কী সফলভাবে যাচাই করা হয়েছে!'
+                    : 'Pass key verified successfully!';
+                showNotification(message);
                 
                 // Scroll to health section
                 document.getElementById('health').scrollIntoView({ behavior: 'smooth' });
             } else {
-                showNotification('অবৈধ পাস কী। আবার চেষ্টা করুন।');
+                const message = currentLanguage === 'bn' 
+                    ? 'অবৈধ পাস কী। আবার চেষ্টা করুন।'
+                    : 'Invalid pass key. Please try again.';
+                showNotification(message);
             }
         }
 
@@ -1104,7 +1851,10 @@
             const selectedCondition = conditionSelect.value;
             
             if (!selectedCondition) {
-                showNotification('অনুগ্রহ করে প্রথমে একটি অবস্থা নির্বাচন করুন।');
+                const message = currentLanguage === 'bn' 
+                    ? 'অনুগ্রহ করে প্রথমে একটি অবস্থা নির্বাচন করুন।'
+                    : 'Please select a condition first.';
+                showNotification(message);
                 return;
             }
             
@@ -1150,247 +1900,100 @@
         function getTreatmentDetails(category, condition) {
             const treatments = {
                 'anxiety': {
-                    name: 'উদ্বেগজনিত ব্যাধি',
-                    description: 'উদ্বেগজনিত ব্যাধিতে অত্যধিক ভয়, উদ্বেগ এবং সম্পর্কিত আচরণগত ব্যাধি জড়িত থাকে। আমরা লক্ষণগুলি পরিচালনা এবং জীবনের মান উন্নত করতে সাহায্য করার জন্য একটি ব্যাপক পদ্ধতি প্রদান করি।',
-                    steps: [
-                        'সঠিক রোগ নির্ণয়ের জন্য একজন মানসিক স্বাস্থ্য পেশাদারের সাথে পরামর্শ করুন',
-                        'গভীর শ্বাস এবং ধ্যানের মতো শিথিলকরণ কৌশলগুলি অনুশীলন করুন',
-                        'নিয়মিত শারীরিক ব্যায়ামে জড়িত হন (সপ্তাহে ৩-৫ বার, ৩০ মিনিট)',
-                        'কগনিটিভ-বিহেভিয়রাল থেরাপি (সিবিটি) বিবেচনা করুন',
-                        'প্রয়োজনে আপনার স্বাস্থ্যসেবা প্রদানকারীর সাথে ওষুধের বিকল্পগুলি নিয়ে আলোচনা করুন',
-                        'নিয়মিত ঘুমের সময়সূচী বজায় রাখুন (প্রতিদিন ৭-৯ ঘন্টা)',
-                        'ক্যাফেইন এবং অ্যালকোহল গ্রহণ সীমিত করুন'
-                    ],
-                    lifestyle: [
-                        'প্রতিদিন মাইন্ডফুলনেস ধ্যান অনুশীলন করুন',
-                        'উদ্বেগ ট্রিগারগুলি ট্র্যাক করতে একটি জার্নাল রাখুন',
-                        'সম্পূর্ণ খাবার সমৃদ্ধ ভারসাম্যপূর্ণ খাদ্য বজায় রাখুন',
-                        'একটি সামঞ্জস্যপূর্ণ দৈনিক রুটিন প্রতিষ্ঠা করুন',
-                        'যদি এটি উদ্বেগ বাড়িয়ে তোলে তবে খবর এবং সোশ্যাল মিডিয়ার এক্সপোজার সীমিত করুন',
-                        'সহায়ক বন্ধু এবং পরিবারের সাথে সংযোগ স্থাপন করুন'
-                    ],
-                    followUp: 'প্রথম মাসের জন্য সাপ্তাহিক চেক-ইন, তারপরে ৩ মাসের জন্য দ্বি-সাপ্তাহিক, এবং তারপরে মাসিক। আপনার অগ্রগতির উপর ভিত্তি করে ফ্রিকোয়েন্সি সামঞ্জস্য করুন।'
+                    name: currentLanguage === 'bn' ? 'উদ্বেগজনিত ব্যাধি' : 'Anxiety Disorders',
+                    description: currentLanguage === 'bn' 
+                        ? 'উদ্বেগজনিত ব্যাধিতে অত্যধিক ভয়, উদ্বেগ এবং সম্পর্কিত আচরণগত ব্যাধি জড়িত থাকে। আমরা লক্ষণগুলি পরিচালনা এবং জীবনের মান উন্নত করতে সাহায্য করার জন্য একটি ব্যাপক পদ্ধতি প্রদান করি।'
+                        : 'Anxiety disorders involve excessive fear, worry, and related behavioral disturbances. We provide a comprehensive approach to help you manage symptoms and improve quality of life.',
+                    steps: currentLanguage === 'bn' 
+                        ? [
+                            'সঠিক রোগ নির্ণয়ের জন্য একজন মানসিক স্বাস্থ্য পেশাদারের সাথে পরামর্শ করুন',
+                            'গভীর শ্বাস এবং ধ্যানের মতো শিথিলকরণ কৌশলগুলি অনুশীলন করুন',
+                            'নিয়মিত শারীরিক ব্যায়ামে জড়িত হন (সপ্তাহে ৩-৫ বার, ৩০ মিনিট)',
+                            'কগনিটিভ-বিহেভিয়রাল থেরাপি (সিবিটি) বিবেচনা করুন',
+                            'প্রয়োজনে আপনার স্বাস্থ্যসেবা প্রদানকারীর সাথে ওষুধের বিকল্পগুলি নিয়ে আলোচনা করুন',
+                            'নিয়মিত ঘুমের সময়সূচী বজায় রাখুন (প্রতিদিন ৭-৯ ঘন্টা)',
+                            'ক্যাফেইন এবং অ্যালকোহল গ্রহণ সীমিত করুন'
+                        ]
+                        : [
+                            'Consult with a mental health professional for proper diagnosis',
+                            'Practice relaxation techniques such as deep breathing and meditation',
+                            'Engage in regular physical exercise (30 minutes, 3-5 times per week)',
+                            'Consider cognitive-behavioral therapy (CBT)',
+                            'Discuss medication options with your healthcare provider if needed',
+                            'Maintain a regular sleep schedule (7-9 hours per night)',
+                            'Limit caffeine and alcohol intake'
+                        ],
+                    lifestyle: currentLanguage === 'bn' 
+                        ? [
+                            'প্রতিদিন মাইন্ডফুলনেস ধ্যান অনুশীলন করুন',
+                            'উদ্বেগ ট্রিগারগুলি ট্র্যাক করতে একটি জার্নাল রাখুন',
+                            'সম্পূর্ণ খাবার সমৃদ্ধ ভারসাম্যপূর্ণ খাদ্য বজায় রাখুন',
+                            'একটি সামঞ্জস্যপূর্ণ দৈনিক রুটিন প্রতিষ্ঠা করুন',
+                            'যদি এটি উদ্বেগ বাড়িয়ে তোলে তবে খবর এবং সোশ্যাল মিডিয়ার এক্সপোজার সীমিত করুন',
+                            'সহায়ক বন্ধু এবং পরিবারের সাথে সংযোগ স্থাপন করুন'
+                        ]
+                        : [
+                            'Practice mindfulness meditation daily',
+                            'Keep a journal to track anxiety triggers',
+                            'Maintain a balanced diet rich in whole foods',
+                            'Establish a consistent daily routine',
+                            'Limit exposure to news and social media if it increases anxiety',
+                            'Connect with supportive friends and family'
+                        ],
+                    followUp: currentLanguage === 'bn' 
+                        ? 'প্রথম মাসের জন্য সাপ্তাহিক চেক-ইন, তারপরে ৩ মাসের জন্য দ্বি-সাপ্তাহিক, এবং তারপরে মাসিক। আপনার অগ্রগতির উপর ভিত্তি করে ফ্রিকোয়েন্সি সামঞ্জস্য করুন।'
+                        : 'Weekly check-ins for the first month, then bi-weekly for 3 months, and monthly thereafter. Adjust frequency based on your progress.'
                 },
                 'depression': {
-                    name: 'অবসাদ',
-                    description: 'অবসাদ একটি মেজাজের ব্যাধি যা দীর্ঘস্থায়ী দুঃখ এবং আগ্রহের অভাব ঘটায়। আমাদের চিকিৎসা পদ্ধতিতে থেরাপি, জীবনধারা পরিবর্তন এবং প্রয়োজনে ওষুধের সমন্বয় রয়েছে।',
-                    steps: [
-                        'একজন মানসিক স্বাস্থ্য বিশেষজ্ঞের কাছ থেকে পেশাদার সাহায্য নিন',
-                        'সাইকোথেরাপিতে জড়িত হন (সিবিটি, আন্তঃব্যক্তিক থেরাপি, ইত্যাদি)',
-                        'নিয়মিত ব্যায়ামের রুটিন প্রতিষ্ঠা করুন (প্রতিদিন ১৫-৩০ মিনিটও সাহায্য করে)',
-                        'একটি সামঞ্জস্যপূর্ণ ঘুমের সময়সূচী বজায় রাখুন',
-                        'আপনার ডাক্তার দ্বারা সুপারিশ করা হলে অ্যান্টিডিপ্রেসেন্ট ওষুধ বিবেচনা করুন',
-                        'আত্ম-সহানুভূতি অনুশীলন করুন এবং নেতিবাচক চিন্তাভাবনাকে চ্যালেঞ্জ করুন',
-                        'প্রতিদিন ছোট, অর্জনযোগ্য লক্ষ্য নির্ধারণ করুন'
-                    ],
-                    lifestyle: [
-                        'প্রতিদিন সূর্যালোকের সংস্পর্শে আসুন',
-                        'ওমেগা-৩ ফ্যাটি অ্যাসিড সমৃদ্ধ ভারসাম্যপূর্ণ খাদ্য খান',
-                        'অ্যালকোহল এবং বিনোদনমূলক ওষুধ এড়িয়ে চলুন',
-                        'প্রিয়জনদের সাথে সংযুক্ত থাকুন',
-                        'একসময় উপভোগ করা কার্যকলাপে জড়িত হন',
-                        'কৃতজ্ঞতা অনুশীলন অনুশীলন করুন'
-                    ],
-                    followUp: 'প্রথম ৬-৮ সপ্তাহের জন্য সাপ্তাহিক থেরাপি সেশন, তারপরে দ্বি-সাপ্তাহিক। ওষুধের অনুসরণ প্রতি ২-৪ সপ্তাহে।'
+                    name: currentLanguage === 'bn' ? 'অবসাদ' : 'Depression',
+                    description: currentLanguage === 'bn' 
+                        ? 'অবসাদ একটি মেজাজের ব্যাধি যা দীর্ঘস্থায়ী দুঃখ এবং আগ্রহের অভাব ঘটায়। আমাদের চিকিৎসা পদ্ধতিতে থেরাপি, জীবনধারা পরিবর্তন এবং প্রয়োজনে ওষুধের সমন্বয় রয়েছে।'
+                        : 'Depression is a mood disorder that causes a persistent feeling of sadness and loss of interest. Our treatment approach combines therapy, lifestyle changes, and when appropriate, medication.',
+                    steps: currentLanguage === 'bn' 
+                        ? [
+                            'একজন মানসিক স্বাস্থ্য বিশেষজ্ঞের কাছ থেকে পেশাদার সাহায্য নিন',
+                            'সাইকোথেরাপিতে জড়িত হন (সিবিটি, আন্তঃব্যক্তিক থেরাপি, ইত্যাদি)',
+                            'নিয়মিত ব্যায়ামের রুটিন প্রতিষ্ঠা করুন (প্রতিদিন ১৫-৩০ মিনিটও সাহায্য করে)',
+                            'একটি সামঞ্জস্যপূর্ণ ঘুমের সময়সূচী বজায় রাখুন',
+                            'আপনার ডাক্তার দ্বারা সুপারিশ করা হলে অ্যান্টিডিপ্রেসেন্ট ওষুধ বিবেচনা করুন',
+                            'আত্ম-সহানুভূতি অনুশীলন করুন এবং নেতিবাচক চিন্তাভাবনাকে চ্যালেঞ্জ করুন',
+                            'প্রতিদিন ছোট, অর্জনযোগ্য লক্ষ্য নির্ধারণ করুন'
+                        ]
+                        : [
+                            'Seek professional help from a mental health specialist',
+                            'Engage in psychotherapy (CBT, interpersonal therapy, etc.)',
+                            'Establish a regular exercise routine (even 15-30 minutes daily helps)',
+                            'Maintain a consistent sleep schedule',
+                            'Consider antidepressant medication if recommended by your doctor',
+                            'Practice self-compassion and challenge negative thoughts',
+                            'Set small, achievable daily goals'
+                        ],
+                    lifestyle: currentLanguage === 'bn' 
+                        ? [
+                            'প্রতিদিন সূর্যালোকের সংস্পর্শে আসুন',
+                            'ওমেগা-৩ ফ্যাটি অ্যাসিড সমৃদ্ধ ভারসাম্যপূর্ণ খাদ্য খান',
+                            'অ্যালকোহল এবং বিনোদনমূলক ওষুধ এড়িয়ে চলুন',
+                            'প্রিয়জনদের সাথে সংযুক্ত থাকুন',
+                            'একসময় উপভোগ করা কার্যকলাপে জড়িত হন',
+                            'কৃতজ্ঞতা অনুশীলন অনুশীলন করুন'
+                        ]
+                        : [
+                            'Expose yourself to sunlight daily',
+                            'Eat a balanced diet rich in omega-3 fatty acids',
+                            'Avoid alcohol and recreational drugs',
+                            'Stay connected with loved ones',
+                            'Engage in activities you once enjoyed',
+                            'Practice gratitude exercises'
+                        ],
+                    followUp: currentLanguage === 'bn' 
+                        ? 'প্রথম ৬-৮ সপ্তাহের জন্য সাপ্তাহিক থেরাপি সেশন, তারপরে দ্বি-সাপ্তাহিক। ওষুধের অনুসরণ প্রতি ২-৪ সপ্তাহে।'
+                        : 'Weekly therapy sessions for the first 6-8 weeks, then bi-weekly. Medication follow-ups every 2-4 weeks.'
                 },
                 'diabetes': {
-                    name: 'ডায়াবেটিস ব্যবস্থাপনা',
-                    description: 'ডায়াবেটিস একটি দীর্ঘস্থায়ী অবস্থা যা আপনার শরীর রক্ত গ্লুকোজ কীভাবে প্রক্রিয়া করে তা প্রভাবিত করে। আমাদের ব্যাপক ব্যবস্থাপনা পরিকল্পনা রক্ত সুগার নিয়ন্ত্রণ, জীবনধারা পরিবর্তন এবং জটিলতা প্রতিরোধের উপর কেন্দ্র করে।',
-                    steps: [
-                        'আপনার ডাক্তারের নির্দেশিকা অনুযায়ী নিয়মিত রক্ত গ্লুকোজ স্তর পর্যবেক্ষণ করুন',
-                        'নির্ধারিত ওষুধ ধারাবাহিকভাবে গ্রহণ করুন',
-                        'একটি ডায়াবেটিস-বান্ধব খাবার পরিকল্পনা অনুসরণ করুন',
-                        'নিয়মিত শারীরিক ক্রিয়াকলাপে জড়িত হন (প্রতি সপ্তাহে ১৫০ মিনিট)',
-                        'একটি স্বাস্থ্যকর ওজন বজায় রাখুন',
-                        'ক্ষত বা আঘাতের জন্য প্রতিদিন পা পরীক্ষা করুন',
-                        'নিয়মিত মেডিকেল চেক-আপে যোগ দিন'
-                    ],
-                    lifestyle: [
-                        'পরিশোধিত শস্যের পরিবর্তে সম্পূর্ণ শস্য বেছে নিন',
-                        'মিষ্টি পানীয় এবং প্রক্রিয়াজাত খাবার সীমিত করুন',
-                        'আপনার খাদ্যে লিন প্রোটিন এবং স্বাস্থ্যকর চর্বি অন্তর্ভুক্ত করুন',
-                        'পানি দিয়ে হাইড্রেটেড থাকুন',
-                        'শিথিলকরণ কৌশলের মাধ্যমে স্ট্রেস পরিচালনা করুন',
-                        'আপনি যদি ধূমপান করেন তবে তা ছাড়ুন'
-                    ],
-                    followUp: 'প্রাথমিক অনুসরণ ২ সপ্তাহে, তারপরে ৩ মাসের জন্য মাসিক, এবং তারপরে প্রতি ৩ মাসে। ওষুধ সামঞ্জস্য করার সময় আরও ঘন ঘন পরিদর্শন।'
-                },
-                'gestational-diabetes': {
-                    name: 'গর্ভকালীন ডায়াবেটিস',
-                    description: 'গর্ভাবস্থায় গর্ভকালীন ডায়াবেটিস বিকশিত হয় এবং আপনার কোষগুলি কীভাবে চিনি ব্যবহার করে তা প্রভাবিত করে। আমাদের ব্যবস্থাপনা পরিকল্পনা রক্ত সুগার স্তর নিয়ন্ত্রণের উপর কেন্দ্র করে যাতে মা এবং শিশু উভয়ের জন্য একটি স্বাস্থ্যকর গর্ভাবস্থা নিশ্চিত হয়।',
-                    steps: [
-                        'প্রতিদিন ৪ বার রক্ত গ্লুকোজ স্তর পর্যবেক্ষণ করুন (উপবাস এবং খাবারের পরে)',
-                        'গর্ভাবস্থার উপযুক্ত খাবার পরিকল্পনা অনুসরণ করুন',
-                        'অনুমোদিত গর্ভাবস্থার ব্যায়ামে জড়িত হন',
-                        'প্রয়োজনে নির্ধারিত ওষুধ গ্রহণ করুন',
-                        'সমস্ত প্রিনেটাল অ্যাপয়েন্টমেন্টে যোগ দিন',
-                        'প্রতিদিন ভ্রূণের চলাফেরা পর্যবেক্ষণ করুন',
-                        'গর্ভকালীন ডায়াবেটিসে বিশেষজ্ঞ ডায়েটিশিয়ানের সাথে পরামর্শ করার কথা বিবেচনা করুন'
-                    ],
-                    lifestyle: [
-                        'দিনের বেলায় ছোট, ঘন ঘন খাবার খান',
-                        'জটিল কার্বোহাইড্রেট এবং লিন প্রোটিন অন্তর্ভুক্ত করুন',
-                        'উচ্চ-চিনি খাবার এবং পানীয় এড়িয়ে চলুন',
-                        'হাঁটা বা সাঁতার দিয়ে সক্রিয় থাকুন',
-                        'পর্যাপ্ত বিশ্রাম এবং ঘুম নিন',
-                        'স্ট্রেস হ্রাস করার কৌশল অনুশীলন করুন'
-                    ],
-                    followUp: 'আপনার স্বাস্থ্যসেবা প্রদানকারীর সাথে সাপ্তাহিক চেক-ইন। রক্ত সুগার স্তর নিয়ন্ত্রণ করা কঠিন হলে আরও ঘন ঘন পর্যবেক্ষণ।'
-                },
-                'asthma': {
-                    name: 'শৈশব হাঁপানি',
-                    description: 'হাঁপানি একটি অবস্থা যা শিশুদের জন্য শ্বাস নেওয়া কঠিন করে তোলে। আমাদের ব্যবস্থাপনা পরিকল্পনা লক্ষণগুলি নিয়ন্ত্রণ করা, আক্রমণ প্রতিরোধ করা এবং নিশ্চিত করা যে আপনার সন্তান স্বাভাবিক কার্যকলাপে অংশগ্রহণ করতে পারে।',
-                    steps: [
-                        'নির্ধারিত হাঁপানি অ্যাকশন প্ল্যান অনুসরণ করুন',
-                        'নির্দেশিত হিসাবে নিয়ন্ত্রণকারী ওষুধ ব্যবহার করুন',
-                        'হাঁপানি ট্রিগারগুলি সনাক্ত করুন এবং এড়িয়ে চলুন',
-                        'নিশ্চিত করুন যে উদ্ধার ইনহেলার সর্বদা উপলব্ধ',
-                        'সঠিক ইনহেলার কৌশল শেখান',
-                        'সুপারিশ করা হলে পিক ফ্লো রিডিং পর্যবেক্ষণ করুন',
-                        'শিশু ফুসফুস বিশেষজ্ঞের সাথে নিয়মিত অনুসরণ নির্ধারণ করুন'
-                    ],
-                    lifestyle: [
-                        'একটি ধোঁয়ামুক্ত পরিবেশ বজায় রাখুন',
-                        'যদি অ্যালার্জি ট্রিগার হয় তবে অ্যালার্জেন-প্রুফ বিছানা ব্যবহার করুন',
-                        'সীমার মধ্যে নিয়মিত শারীরিক ক্রিয়াকলাপে উৎসাহিত করুন',
-                        'ভাল ইনডোর বায়ু মান নিশ্চিত করুন',
-                        'শ্বাসযন্ত্রের সংক্রমণ প্রতিরোধে সঠিক হাত ধোয়া অনুশীলন করুন',
-                        'প্যাটার্ন সনাক্ত করতে একটি লক্ষণ ডায়রি রাখুন'
-                    ],
-                    followUp: 'প্রাথমিক অনুসরণ ২ সপ্তাহে, তারপরে ৩ মাসের জন্য মাসিক, এবং তারপরে প্রতি ৩-৬ মাসে। লক্ষণগুলি খারাপ হলে তাৎক্ষণিক অনুসরণ।'
-                }
-            };
-            
-            // Return the treatment details or a default if not found
-            return treatments[condition] || {
-                name: 'স্বাস্থ্য অবস্থা',
-                description: 'আপনার নির্দিষ্ট অবস্থা এবং চাহিদার উপর ভিত্তি করে একটি ব্যক্তিগতকৃত চিকিৎসা পরিকল্পনা তৈরি করা হবে।',
-                steps: [
-                    'সঠিক রোগ নির্ণয়ের জন্য একজন স্বাস্থ্যসেবা পেশাদারের সাথে পরামর্শ করুন',
-                    'নির্ধারিত চিকিৎসা পরিকল্পনা ধারাবাহিকভাবে অনুসরণ করুন',
-                    'সুপারিশকৃত জীবনধারা পরিবর্তন করুন',
-                    'লক্ষণ এবং অগ্রগতি পর্যবেক্ষণ করুন',
-                    'নিয়মিত অনুসরণ অ্যাপয়েন্টমেন্টে যোগ দিন'
-                ],
-                lifestyle: [
-                    'একটি ভারসাম্যপূর্ণ খাদ্য বজায় রাখুন',
-                    'নিয়মিত শারীরিক ক্রিয়াকলাপে জড়িত হন',
-                    'পর্যাপ্ত ঘুম নিন',
-                    'কার্যকরভাবে স্ট্রেস পরিচালনা করুন',
-                    'পরিচিত ট্রিগার এড়িয়ে চলুন'
-                ],
-                followUp: 'অনুসরণের সময়সূচী আপনার নির্দিষ্ট অবস্থা এবং চিকিৎসা পরিকল্পনার উপর ভিত্তি করে নির্ধারিত হবে।'
-            };
-        }
-
-        // Start progress tracking
-        function startProgressTracking() {
-            userHealthData.treatmentStarted = true;
-            document.getElementById('progress').style.display = 'block';
-            
-            // Scroll to progress section
-            document.getElementById('progress').scrollIntoView({ behavior: 'smooth' });
-            
-            showNotification('অগ্রগতি ট্র্যাকিং শুরু হয়েছে! আমরা আপনার পুনরুদ্ধার যাত্রায় আপনাকে গাইড করব।');
-        }
-
-        // Show review section
-        function showReviewSection() {
-            document.getElementById('review').style.display = 'block';
-            
-            // Scroll to review section
-            document.getElementById('review').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Rating system
-        document.querySelectorAll('#rating i').forEach(star => {
-            star.addEventListener('click', function() {
-                selectedRating = parseInt(this.getAttribute('data-rating'));
-                
-                // Update star display
-                document.querySelectorAll('#rating i').forEach(s => {
-                    if (parseInt(s.getAttribute('data-rating')) <= selectedRating) {
-                        s.classList.remove('far');
-                        s.classList.add('fas');
-                    } else {
-                        s.classList.remove('fas');
-                        s.classList.add('far');
-                    }
-                });
-            });
-        });
-
-        // Submit review
-        function submitReview() {
-            const reviewText = document.getElementById('review-text').value;
-            
-            if (selectedRating === 0) {
-                showNotification('অনুগ্রহ করে একটি রেটিং নির্বাচন করুন।');
-                return;
-            }
-            
-            if (!reviewText.trim()) {
-                showNotification('অনুগ্রহ করে একটি পর্যালোচনা লিখুন।');
-                return;
-            }
-            
-            // In a real application, this would send the review to a server
-            showNotification('আপনার পর্যালোচনার জন্য ধন্যবাদ! আমাদের পরিষেবাগুলি উন্নত করতে আপনার প্রতিক্রিয়া আমাদের সাহায্য করে।');
-            
-            // Reset form
-            document.getElementById('review-text').value = '';
-            selectedRating = 0;
-            document.querySelectorAll('#rating i').forEach(s => {
-                s.classList.remove('fas');
-                s.classList.add('far');
-            });
-        }
-
-        // Show feature details
-        function showFeatureDetails(feature) {
-            showNotification(`আমাদের বিনামূল্যে সংস্করণে নিবন্ধন করে ${feature} বৈশিষ্ট্য সম্পর্কে আরও জানুন।`);
-            
-            // Scroll to registration section
-            document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Show notification
-        function showNotification(message) {
-            const notification = document.getElementById('notification');
-            const notificationText = document.getElementById('notificationText');
-            
-            notificationText.textContent = message;
-            notification.classList.add('show');
-            
-            // Hide notification after 5 seconds
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 5000);
-        }
-
-        // Highlight active navigation section while scrolling
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav ul li a');
-            
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+                    name: currentLanguage === 'bn' ? 'ডায়াবেটিস ব্যবস্থাপনা' : 'Diabetes Management',
+                    description: currentLanguage === 'bn' 
+                        ? 'ডায়াবেটিস একটি দীর্ঘস্থায়ী অবস্থা যা আপনার শরীর রক্ত গ্লুকোজ কীভাবে প্রক্রিয়া করে তা প্রভাবিত করে। আমাদের ব্যাপক ব্যবস্থাপনা পরিকল্পনা রক্ত সুগার নিয়ন্ত্রণ, জীবনধারা পরিবর্তন এবং জটিলতা প্রতিরোধের উপর কেন্দ্র করে।'
+                        : 'Diabetes is a chronic condition that affects how your body processes blood glucose. Our comprehensive management plan focuses on blood sugar control, lifestyle modifications, and preventing complications.',
+                    steps: currentLanguage === 'bn' 
+                        ? [
+                            'আপনার ডাক্তারের নির্দেশিকা অনুয
